@@ -1,4 +1,4 @@
-<!-- ![](./assets/preview.png) -->
+![](./assets/preview.png)
 <h1 align='center'>Pytract</h1>
 <p align="center">
   <a href="https://github.com/SandeepBalachandran/Pytract/releases/" target="_blank">
