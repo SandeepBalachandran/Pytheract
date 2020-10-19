@@ -34,7 +34,7 @@
 </p>
 <hr>
 
-<h2 align="center">Optical character recognition using PyTesseract </h2> 
+<h2 align="center">Optical character recognition using tesseract </h2> 
 
 # Table of contents
 
@@ -64,11 +64,6 @@
 # Installation
 - 
 - 
-
-# Available Models
--
--
-
 
 # Contribute
 Please check the [**Contributing Guidelines**](https://github.com/SandeepBalachandran/Pytract/blob/master/CONTRIBUTING.md) before contributing.
