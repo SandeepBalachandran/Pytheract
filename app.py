@@ -3,6 +3,8 @@ import os
 from flask import Flask, render_template, request
 
 from ocr_core import ocr_core
+import cv2
+from pdf2image import convert_from_path, convert_from_bytes
 
 
 UPLOAD_FOLDER = '/static/uploads/'
@@ -18,7 +20,18 @@ def allowed_file(filename):
 
 @app.route('/')
 def home_page():
+    # images = convert_from_path('./static/uploads/sample.pdf')
+    # print(images)
     return render_template('index.html')
+
+@app.route('/detect')
+def detect():
+    path ='./static/uploads/preview.png'
+    original_image = cv2.imread(path)
+    # imread() function, along with the path to the image we want to process. 
+    # The imread() function simply loads the image from the specified file in an ndarray. 
+    # If the image could not be read, for example in case of a missing file or an unsupported format, the function will return None.
+    return render_template('detect.html',msg =path,something=original_image)
 
 
 @app.route('/upload', methods=['GET', 'POST'])
@@ -41,7 +54,7 @@ def upload_page():
 
             # extract the text and display it
             return render_template('upload.html',
-                                   msg='Successfully processed',
+                                   msg='Successfully Processed',
                                    extracted_text=extracted_text,
                                    img_src=UPLOAD_FOLDER + file.filename)
     elif request.method == 'GET':

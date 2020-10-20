@@ -1,31 +1,55 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Upload Image</title>
-  </head>
-  <body>
+<html lang="en">
 
-    {% if msg %}
-    <h1>{{ msg }}</h1>
-    {% endif %}
-    
-    <h1>Upload new File</h1>
-    
-    <form method=post enctype=multipart/form-data>
-      <p><input type=file name=file>
-         <input type=submit value=Upload>
-    </form>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../static/css/style.css">
+  <script src="../static/script/script.js"></script>
+</head>
 
-    <h1>Result:</h1>
-    {% if img_src %}
-      <img src="{{ img_src }}">
-    {% endif %}
-    
-    {% if extracted_text %}
-      <p> The extracted text from the image above is: <b> {{ extracted_text }} </b></p>
-    
-    {% else %}
-      The extracted text will be displayed here
-    {% endif %}
-  </body>
+<body>
+  <div class="container">
+    <div class="toolbar">
+
+    </div>
+    <div class="container-body">
+      <div class="upload-div width-50 flt-lft" id="uploaddiv">
+        <span id="filename"> </span>
+        <form method=post enctype=multipart/form-data class="form" onsubmit="onFileSubmit()">
+          <div class="form-control">
+            <div class="upload-container">
+              <input type=file name=file class="inputfile" onChange='getFileNameWithExt(event)'>
+              <span>Choose a file</span>
+            </div>
+          </div>
+          <div class="form-control">
+            <button type="submit" class="submit" id="submitbtn"><span>Upload</span></button>
+          </div>
+        </form>
+      </div>
+      <div class="result-div width-50 flt-lft" id="resultdiv">
+        {% if img_src %}
+        <div class="preview txt-ctr">
+          <img src="{{ img_src }}">
+        </div>
+        {% endif %}
+
+        {% if extracted_text %}
+        <div class="result">
+          <b> {{ extracted_text }} </b>
+        </div>
+        {% else %}
+        The extracted text will be displayed here
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</body>
+{% if msg %}
+<div class="toaster-div">
+  <span>{{ msg }}</span>
+</div>
+{% endif %}
 </html>
