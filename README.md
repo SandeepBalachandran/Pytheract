@@ -1,5 +1,5 @@
-![](./assets/preview.png)
-<h1 align='center'>Pytract</h1>
+![](./images/preview.png)
+<h1 align='center'>Pytheract</h1>
 <p align="center">
   <a href="https://github.com/SandeepBalachandran/Pytract/releases/" target="_blank">
     <img alt="GitHub release" src="https://img.shields.io/github/v/release/SandeepBalachandran/Pytract?include_prereleases&style=flat-square">
@@ -34,7 +34,7 @@
 </p>
 <hr>
 
-<h2 align="center">Optical character recognition using PyTesseract </h2> 
+<h2 align="center">Optical character recognition using tesseract </h2> 
 
 # Table of contents
 
@@ -64,11 +64,6 @@
 # Installation
 - 
 - 
-
-# Available Models
--
--
-
 
 # Contribute
 Please check the [**Contributing Guidelines**](https://github.com/SandeepBalachandran/Pytract/blob/master/CONTRIBUTING.md) before contributing.
