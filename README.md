@@ -41,29 +41,47 @@
 - [Introduction](#introduction)
 - [Usage](#usage)
 - [Installation](#installation)
-- [Available models](#available-models)
 - [Contribute](#contribute)
 
 # Introduction
-
-- 
--  
+An application that extract meaningful data from any type of documents. [Currently support image formats].   
 - 
 
 # Usage
+*For **end users**.*
 
+Currently in progress to set up an environment
+
+
+
+
+# Installation
 *For **developers**.*
+### Prerequisites
+
+The application needs a number of dependencies. Kindly ensure you have the following installed on your machine:
+
+- [ ] Tesseract
+- [ ] Python
+- [ ] Git
+
+
+- Tesseract 
+  - [Offcial documentation.](https://github.com/tesseract-ocr/tessdoc/blob/master/Documentation.md)
+  - [Offcial download section.](https://github.com/tesseract-ocr/tessdoc/blob/master/Downloads.md)
+  - [V5 alpha using in dev machine.](https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v5.0.0-alpha.20200328.exe)
+
+- Python
+  - [Official download.](https://www.python.org/downloads/)
+
+- Git
+  - [Official download.](https://git-scm.com/downloads)
+ 
 - Clone this repository using.
   - Using HTTP protocol, <code>git clone https://github.com/SandeepBalachandran/Pytract.git</code>
   - Using SSH protocol,  <code>git clone git@github.com:SandeepBalachandran/Pytract.git</code>
   - Using GitHub CLI,  <code>gh repo clone SandeepBalachandran/Pytract</code>
-- 
-- 
 
-
-# Installation
-- 
-- 
 
 # Contribute
 Please check the [**Contributing Guidelines**](https://github.com/SandeepBalachandran/Pytract/blob/master/CONTRIBUTING.md) before contributing.
