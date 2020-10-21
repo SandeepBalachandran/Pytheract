@@ -37,18 +37,22 @@
         {% endif %}
 
         {% if extracted_text %}
-        <div class="result">
-          <b> {{ extracted_text }} </b>
+        <div class="result txt-ctr">
+          <b id="extractedtext"> {{ extracted_text }} </b>
+          <div class="form-control">
+            <button   onclick="copytoclipboard()"><span>Copy to clipboard</span></button>
+          </div>
         </div>
         {% else %}
-        The extracted text will be displayed here
+        No preview available
         {% endif %}
+       
       </div>
     </div>
   </div>
 </body>
 {% if msg %}
-<div class="toaster-div">
+<div class="toaster-div" onmouseover="hide(this)" id ="hideMe">
   <span>{{ msg }}</span>
 </div>
 {% endif %}

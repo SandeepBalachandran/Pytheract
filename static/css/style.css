@@ -116,23 +116,24 @@ body {
     font-size: 15px;
 }
 .upload-container {
-        /* width: 100px; */
-        text-align: center;
-        padding: 90px 0px;
-        /* height: 100px; */
-        border-radius: 5px;
-        border: 1px dashed #03a9f4;
-        background-color: #f2f2f2;
+           /* width: 100px; */
+    text-align: center;
+    /* padding: 90px 0px; */
+    position: relative;
+    height: 168px;
+    border-radius: 5px;
+    border: 1px dashed #03a9f4;
+    background-color: #f2f2f2;
     
 }
 .inputfile {
-	/* width: 0.1px;
-	height: 0.1px; */
-	opacity: 0;
-	overflow: hidden;
-	/* position: absolute; */
-    z-index: -1;
-    display:block;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: 99999;
+    width: 100%;
+    display: block;
+    height: 100%;
 }
 .submit {
     /* margin-left: 55px;
