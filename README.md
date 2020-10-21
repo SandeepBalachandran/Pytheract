@@ -85,7 +85,7 @@ The application needs a number of dependencies. Kindly ensure you have the follo
   ```
   2. Check into the cloned repository
   ```cmd
-  $ cd python-ocr-example
+  $ cd Pytheract
   ```
   3. If you are using Pipenv, setup the virtual environment and start it as follows:
   ```cmd
