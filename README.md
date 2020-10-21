@@ -76,13 +76,30 @@ The application needs a number of dependencies. Kindly ensure you have the follo
 
 - Git
   - [Official download.](https://git-scm.com/downloads)
+  
+  
+  ### Running the Application
+  1.Clone the repository
+  ```cmd
+  $ git clone https://github.com/SandeepBalachandran/Pytheract.git
+  ```
+  2. Check into the cloned repository
+  ```cmd
+  $ cd python-ocr-example
+  ```
+  3. If you are using Pipenv, setup the virtual environment and start it as follows:
+  ```cmd
+  $ pipenv install && pipenv shell
+  ```
+  4. Install the requirements
+  ```cmd
+  $ pip install -r requirements.txt
+  ```
+  5. Run OCR server
+  ```cmd
+  $ python app.py
+  ```
  
-- Clone this repository using.
-  - Using HTTP protocol, <code>git clone https://github.com/SandeepBalachandran/Pytract.git</code>
-  - Using SSH protocol,  <code>git clone git@github.com:SandeepBalachandran/Pytract.git</code>
-  - Using GitHub CLI,  <code>gh repo clone SandeepBalachandran/Pytract</code>
-
-
 # Contribute
 Please check the [**Contributing Guidelines**](https://github.com/SandeepBalachandran/Pytract/blob/master/CONTRIBUTING.md) before contributing.
 
