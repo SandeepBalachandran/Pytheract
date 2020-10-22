@@ -44,8 +44,8 @@
 - [Contribute](#contribute)
 
 # Introduction
-An application that extract meaningful data from any type of documents. [Currently support image formats].   
-- 
+
+An application that extract meaningful data from any type of documents. [Currently support image formats].
 
 # Usage
 *For **end users**.*
