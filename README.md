@@ -30,6 +30,12 @@
   <a href="" target="_blank">
     <img alt="ESLint" src="https://img.shields.io/github/forks/SandeepBalachandran/Pytract">
   </a>
+   <a href="" target="_blank">
+    <img alt="Codesize" src="https://img.shields.io/github/languages/code-size/SandeepBalachandran/Pytract.svg">
+  </a>
+  <a href="" target="_blank">
+    <img alt="Top Language" src="https://img.shields.io/github/languages/top/SandeepBalachandran/Pytract.svg">
+  </a>
   
 </p>
 <hr>
