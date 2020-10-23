@@ -20,7 +20,7 @@
         <form method=post enctype=multipart/form-data class="form" onsubmit="onFileSubmit()">
           <div class="form-control">
             <div class="upload-container">
-              <input type=file name=file class="inputfile" onChange='getFileNameWithExt(event)'>
+              <input type=file name=file class="inputfile" multiple onChange='getFileNameWithExt(event)'>
               <span>Choose a file</span>
             </div>
           </div>
@@ -29,7 +29,7 @@
           </div>
         </form>
       </div>
-      <div class="result-div width-50 flt-lft" id="resultdiv">
+      <div class="result-div width-50 flt-lft txt-ctr" id="resultdiv">
         {% if img_src %}
         <div class="preview txt-ctr">
           <img src="{{ img_src }}">

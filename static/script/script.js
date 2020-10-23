@@ -1,18 +1,23 @@
 window.onload = main;
 
 function getFileNameWithExt(event) {
-
+  var placeholder = document.getElementById("filename");
     if (!event || !event.target || !event.target.files || event.target.files.length === 0) {
         return;
     }
 
     const name = event.target.files[0].name;
+    console.log(event)
+    for(let item of  event.target.files) {
+      console.log(item.name)
+      placeholder.innerHTML += "Filename : " + "<b>" + item.name + "</b>";
+    }
     console.log(event.target.files[0])
     // const lastDot = name.lastIndexOf('.');
 
     // const fileName = name.substring(0, lastDot);
     // const ext = name.substring(lastDot + 1);
-    var placeholder = document.getElementById("filename");
+   
 
     placeholder.innerHTML = "Filename : " + "<b>" + name + "</b>";
     submitbtn.style.display = "initial";
