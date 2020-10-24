@@ -106,6 +106,7 @@ The application needs a number of dependencies. Kindly ensure you have the follo
   $ pip install -r requirements.txt
   ```
   5. Run OCR server
+  
   ```cmd
   $ python app.py
   ```
