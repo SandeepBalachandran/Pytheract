@@ -86,18 +86,22 @@ The application needs a number of dependencies. Kindly ensure you have the follo
   
   ### Running the Application
   1.Clone the repository
+  
   ```cmd
   $ git clone https://github.com/SandeepBalachandran/Pytheract.git
   ```
   2. Check into the cloned repository
+  
   ```cmd
   $ cd Pytheract
   ```
   3. If you are using Pipenv, setup the virtual environment and start it as follows:
+  
   ```cmd
   $ pipenv install && pipenv shell
   ```
   4. Install the requirements
+  
   ```cmd
   $ pip install -r requirements.txt
   ```
