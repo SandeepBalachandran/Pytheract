@@ -58,6 +58,10 @@ An application that extract meaningful data from any type of documents. [Current
 
 Currently in progress to set up an environment
 
+### Flow
+ * Upload an image using the frontend.
+ * Tesseract will extract the texts available in the image uploaded.
+
 
 
 
