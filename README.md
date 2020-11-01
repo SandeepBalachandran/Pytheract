@@ -1,6 +1,6 @@
 ![](./images/preview.png)
 <h1 align='center'>Pytheract</h1>
-<p align="center">
+<p align="center"> 
   <a href="https://github.com/SandeepBalachandran/Pytract/releases/" target="_blank">
     <img alt="GitHub release" src="https://img.shields.io/github/v/release/SandeepBalachandran/Pytract?include_prereleases&style=flat-square">
   </a>
