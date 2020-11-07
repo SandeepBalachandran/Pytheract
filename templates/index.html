@@ -7,6 +7,7 @@
   <title>Home</title>
   <link rel="stylesheet" href="../static/css/style.css">
   <script src="../static/script/script.js"></script>
+
 </head>
 
 <body>
@@ -16,12 +17,125 @@
     </div>
     <div class="container-body">
       <div class="home-div">
-        <a href="./upload">
-          <button> <span>Upload</span></button>
-        </a>
+        <div class="upload-div width-100 flt-lft" id="uploaddiv">
+          <div class="form">
+            <div class="form-control">
+              <input type="text" id="projectname">
+            </div>
+            <span id="filename"> </span>
+            <div class="form-control">
+              <div class="upload-container">
+                <input type=file name=file class="inputfile" multiple onChange='fileSelect(event)'>
+                <span>Choose a file</span>
+              </div>
+            </div>
+          </div>
+         
+          <div class="form-control">
+            <button type="submit" class="submit" onclick="fileUpload()" id="submitbtn"><span>Upload</span></button>
+          </div>
+        </div>
+        <!-- <button> <span>Upload</span></button> -->
+        <!-- <button onclick="addvalues()">Add valeus</button> -->
+        <!-- <input type="text" id="projectname">
+        <input type="file" onChange="fileSelect(event)"> -->
+        <!-- <button onclick="fileUpload()">Upload</button> -->
+        <div id="demo"></div>
       </div>
     </div>
   </div>
 </body>
+<script>
+  var container = document.getElementById('demo');
+  var data = new FormData()
+  window.onload = main;
+  const url = 'http://localhost:5000'
+  function addvalues() {
+    fetch(url + "/denoise/documents/pix", {
+      method: "POST",
+      body: JSON.stringify({
+        name: "foo",
+        email: "bar",
+        password: "thh"
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8"
+      }
+    })
+      .then(response => { response.json(); getvalues();})
+      .then(json => console.log(json));
+    getvalues();
+  }
+  function fileSelect(event) {
+    console.log(event.target.files)
+    data.append('image', event.target.files[0]);
+    console.log(data.get("image"))
+    console.log(data.get("projectname"))
+  }
+
+  function fileUpload() {
+    console.log('d')
+    let projectname = document.getElementById('projectname').value
+    data.append('type', projectname)
+    fetch(url + "/denoise/documents/pix", {
+      method: "POST",
+      body: data,
+      // headers: {
+      //     "Content-type": "application/json"
+      // }
+    })
+      .then(response => response.json())
+      .then(json => console.log(json));
+  }
+
+  function getvalues() {
+    // document.body.innerHTML = '';
+    // d.removeChild(olddiv)
+    // container.innerHTML = ''
+    fetch(url + "/denoise/documents/pix")
+      .then((resp) => resp.json())
+      .then(function (data) {
+        console.log(data)
+        return data.map(function (data) {
+          let div = createNode('div')
+          div.setAttribute('class', 'card')
+          p1 = createNode('p'),
+            p2 = createNode('p');
+          img = createNode('img');
+          img.src = data.image_url_old
+          var absdiv = createNode('div')
+          absdiv.setAttribute('class', 'posabs')
+          let spandiv = createNode('span')
+          div.addEventListener('mouseenter', function () {
+            spandiv.innerHTML = data.noise_text
+            append(absdiv, spandiv)
+            append(div, absdiv)
+          });
+          div.addEventListener('mouseleave', function () {
+            absdiv.remove()
+          });
+          p1.innerHTML = `${data.type}`;
+          // p2.innerHTML = `${data.email}`;
+          append(div, img)
+          append(div, p1);
+          // append(div, p2);
+          append(container, div);
+        })
+      })
+  }
+
+  function main() {
+    getvalues()
+  }
+
+  function createNode(element) {
+    return document.createElement(element);
+  }
+
+  function append(parent, el) {
+    return parent.appendChild(el);
+  }
+
+</script>
 
 </html>

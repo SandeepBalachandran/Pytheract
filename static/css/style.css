@@ -97,6 +97,8 @@ body {
 }
 .upload-div{
     text-align: center;
+    width: 30%;
+    margin: 0 auto;
    
 }
 .container-body button {
@@ -124,6 +126,7 @@ body {
     border-radius: 5px;
     border: 1px dashed #03a9f4;
     background-color: #f2f2f2;
+
     
 }
 .inputfile {
@@ -145,6 +148,8 @@ body {
 }
 .form-control {
     margin: 25px 0;
+    /* width: 30%; */
+    /* margin: 0 auto; */
 }
 
 .submit:hover {
@@ -171,6 +176,9 @@ body {
   .width-50 {
     width: 50%;
   }
+  .width-100{
+      width:100%;
+  }
   .flt-lft {
     float:left;
   }
@@ -189,4 +197,21 @@ body {
     top: 10%;
     background-color: green;
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  }
+
+  .card{
+      width:20%;
+      position: relative;
+      float: left;
+  }
+  .card img {
+      width:100%;
+  }
+  .posabs{
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    box-shadow: 1px 1px 20px 6px #808080a6;
+    padding: 16px;
+    border-radius: 5px;
   }

@@ -9,6 +9,10 @@ verify_ssl = true
 pytesseract = "*"
 pillow = "*"
 flask = "*"
+flask-pymongo = "*"
+bcrypt = "*"
+bson = "*"
+flask-cors = "*"
 
 [requires]
 python_version = "3.8"
