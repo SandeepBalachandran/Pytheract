@@ -1,6 +1,6 @@
 ![](./images/preview.png)
 <h1 align='center'>Pytheract</h1>
-<p align="center">
+<p align="center"> 
   <a href="https://github.com/SandeepBalachandran/Pytract/releases/" target="_blank">
     <img alt="GitHub release" src="https://img.shields.io/github/v/release/SandeepBalachandran/Pytract?include_prereleases&style=flat-square">
   </a>
@@ -58,6 +58,10 @@ An application that extract meaningful data from any type of documents. [Current
 
 Currently in progress to set up an environment
 
+### Flow
+ * Upload an image using the frontend.
+ * Tesseract will extract the texts available in the image uploaded.
+
 
 
 
@@ -86,22 +90,27 @@ The application needs a number of dependencies. Kindly ensure you have the follo
   
   ### Running the Application
   1.Clone the repository
+  
   ```cmd
   $ git clone https://github.com/SandeepBalachandran/Pytheract.git
   ```
   2. Check into the cloned repository
+  
   ```cmd
   $ cd Pytheract
   ```
   3. If you are using Pipenv, setup the virtual environment and start it as follows:
+  
   ```cmd
   $ pipenv install && pipenv shell
   ```
   4. Install the requirements
+  
   ```cmd
   $ pip install -r requirements.txt
   ```
   5. Run OCR server
+  
   ```cmd
   $ python app.py
   ```
