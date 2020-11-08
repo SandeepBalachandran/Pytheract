@@ -3,6 +3,7 @@ import os
 from flask import Flask, render_template, request
 
 from ocr_core import ocr_core
+from pdf_img_core import pdf_to_img
 # import cv2
 # from pdf2image import convert_from_path, convert_from_bytes
 from flask import Flask, jsonify, request
@@ -35,11 +36,11 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-@app.route('/')
-def home_page():
-    # images = convert_from_path('./static/uploads/sample.pdf')
-    # print(images)
-    return render_template('index.html')
+# @app.route('/')
+# def home_page():
+#     # images = convert_from_path('./static/uploads/sample.pdf')
+#     # print(images)
+#     return render_template('index.html')
 
 @app.route('/detect')
 def detect():
@@ -51,31 +52,31 @@ def detect():
     return render_template('detect.html',msg =path,something=original_image)
 
 
-@app.route('/upload', methods=['GET', 'POST'])
-def upload_page():
-    if request.method == 'POST':
-        # check if the post request has the file part
-        if 'file' not in request.files:
-            return render_template('upload.html', msg='No file selected')
-        file = request.files['file']
-        # if user does not select file, browser also
-        # submit a empty part without filename
-        if file.filename == '':
-            return render_template('upload.html', msg='No file selected')
+# @app.route('/upload', methods=['GET', 'POST'])
+# def upload_page():
+#     if request.method == 'POST':
+#         # check if the post request has the file part
+#         if 'file' not in request.files:
+#             return render_template('upload.html', msg='No file selected')
+#         file = request.files['file']
+#         # if user does not select file, browser also
+#         # submit a empty part without filename
+#         if file.filename == '':
+#             return render_template('upload.html', msg='No file selected')
 
-        if file and allowed_file(file.filename):
-            file.save(os.path.join(os.getcwd() + UPLOAD_FOLDER, file.filename))
+#         if file and allowed_file(file.filename):
+#             file.save(os.path.join(os.getcwd() + UPLOAD_FOLDER, file.filename))
 
-            # call the OCR function on it
-            extracted_text = ocr_core(file)
+#             # call the OCR function on it
+#             extracted_text = ocr_core(file)
 
-            # extract the text and display it
-            return render_template('upload.html',
-                                   msg='Successfully Processed',
-                                   extracted_text=extracted_text,
-                                   img_src=UPLOAD_FOLDER + file.filename)
-    elif request.method == 'GET':
-        return render_template('upload.html')
+#             # extract the text and display it
+#             return render_template('upload.html',
+#                                    msg='Successfully Processed',
+#                                    extracted_text=extracted_text,
+#                                    img_src=UPLOAD_FOLDER + file.filename)
+#     elif request.method == 'GET':
+#         return render_template('upload.html')
 
 
 @app.route("/add", methods=["POST"])
@@ -167,19 +168,29 @@ def upload():
     if request.method == "POST":
         if request.files:
             typename = request.form.get('type')
-            image = request.files["image"]
-            if image.filename == "":
-                return "Image Must have a file name"
+            file = request.files["file"]
+            filename, file_extension = os.path.splitext(file.filename)
+            # res = jsonify({"result":file_extension, "message":"uploaded succesfully"})
+            # res.status_code = 201
+            # return res
+            if file_extension == ".pdf":
+                file = pdf_to_img(file)
+                res = jsonify({"result":'yes', "message":"uploaded succesfully"})
+                res.status_code = 201
+                return res
+            
+            if file.filename == "":
+                return "File Must have a file name"
             path = app.config["IMAGE_UPLOADS"] +'/'+typename 
             if not os.path.exists(path):          
                 os.makedirs(path)
             app.config["UPLOAD_FOLDER"] = path
             root = 'http://localhost:5500/Pytheract/uploads';
-            image.save(os.path.join(app.config['UPLOAD_FOLDER'], image.filename))
-            imgfullpath = root + '/' +typename+'/'+image.filename
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
+            imgfullpath = root + '/' +typename+'/'+file.filename
             if typename and request.method == "POST":
                 # hashed_pwd = generate_password_hash(_pwd)
-                extracted_text = ocr_core(image)
+                extracted_text = ocr_core(file)
                 id = mongo.db.user.insert(
                     {
                         "type": typename,

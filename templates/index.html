@@ -17,23 +17,33 @@
     </div>
     <div class="container-body">
       <div class="home-div">
-        <div class="upload-div width-100 flt-lft" id="uploaddiv">
-          <div class="form">
-            <div class="form-control">
-              <input type="text" id="projectname">
-            </div>
-            <span id="filename"> </span>
-            <div class="form-control">
-              <div class="upload-container">
-                <input type=file name=file class="inputfile" multiple onChange='fileSelect(event)'>
-                <span>Choose a file</span>
+        <div class="width-20 flt-lft">
+          <div class="upload-div width-100 flt-lft" id="uploaddiv">
+            <div class="width-100">
+              <div class="form-control">
+                <input type="text" id="projectname">
+              </div>
+              <span id="filename"> </span>
+              <div class="form-control">
+                <div class="upload-container">
+                  <input type=file name=file class="inputfile" multiple onChange='fileSelect(event)'>
+                  <span>Choose a file</span>
+                </div>
+              </div>
+              <div id="uploadedfiles"></div>
+
+
+              <div class="form-control">
+                <button class="submit" onclick="fileUpload()" id="submitbtn"><span>Upload</span></button>
               </div>
             </div>
           </div>
-         
-          <div class="form-control">
-            <button type="submit" class="submit" onclick="fileUpload()" id="submitbtn"><span>Upload</span></button>
+          <div class="projectlist  width-100" style="overflow: auto" id="projectlist">
+
           </div>
+        </div>
+        <div class="width-80 flt-lft" id="detailsdiv">
+
         </div>
         <!-- <button> <span>Upload</span></button> -->
         <!-- <button onclick="addvalues()">Add valeus</button> -->
@@ -46,35 +56,52 @@
   </div>
 </body>
 <script>
-  var container = document.getElementById('demo');
-  var data = new FormData()
+  var container = document.getElementById('projectlist');
+  var detailsdiv = document.getElementById('detailsdiv');
+  var uploadedfiles = document.getElementById('uploadedfiles');
+  var fileList = [];
   window.onload = main;
   const url = 'http://localhost:5000'
-  function addvalues() {
-    fetch(url + "/denoise/documents/pix", {
-      method: "POST",
-      body: JSON.stringify({
-        name: "foo",
-        email: "bar",
-        password: "thh"
-      }),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8"
-      }
-    })
-      .then(response => { response.json(); getvalues();})
-      .then(json => console.log(json));
-    getvalues();
-  }
+  // function addvalues() {
+  //   fetch(url + "/denoise/documents/pix", {
+  //     method: "POST",
+  //     body: JSON.stringify({
+  //       name: "foo",
+  //       email: "bar",
+  //       password: "thh"
+  //     }),
+  //     headers: {
+  //       "Content-type": "application/json; charset=UTF-8"
+  //     }
+  //   })
+  //     .then(response => { response.json()})
+  //     .then(json => { console.log(json); getvalues();});
+  // }
   function fileSelect(event) {
-    console.log(event.target.files)
-    data.append('image', event.target.files[0]);
-    console.log(data.get("image"))
-    console.log(data.get("projectname"))
-  }
+    // console.log(event.target.files)
+    // data.append('image', event.target.files[0]);
+    // console.log(data.get("image"))
+    // console.log(data.get("projectname"))
+    fileList = fileList.concat(event.target.files[0]);
+    console.log(fileList)
+    let divv = createNode('div')
+    fileList.forEach((file) => {
+      divv.innerHTML = file.name
+      append(uploadedfiles,divv)
+    });
+    divv.addEventListener('click',function(){
+      fileList.splice(1, 1);
+    })
+    
 
+  }
+ 
   function fileUpload() {
-    console.log('d')
+    console.log(this.fileList)
+    var data = new FormData()
+    fileList.forEach((file) => {
+      data.append('file', file);
+    });
     let projectname = document.getElementById('projectname').value
     data.append('type', projectname)
     fetch(url + "/denoise/documents/pix", {
@@ -84,42 +111,32 @@
       //     "Content-type": "application/json"
       // }
     })
-      .then(response => response.json())
+      .then(response => { response.json(); getvalues(); fileList = [];})
       .then(json => console.log(json));
   }
 
   function getvalues() {
-    // document.body.innerHTML = '';
-    // d.removeChild(olddiv)
-    // container.innerHTML = ''
+    container.innerHTML = ''
+    let ul = createNode('ul')
     fetch(url + "/denoise/documents/pix")
       .then((resp) => resp.json())
       .then(function (data) {
         console.log(data)
         return data.map(function (data) {
-          let div = createNode('div')
-          div.setAttribute('class', 'card')
-          p1 = createNode('p'),
-            p2 = createNode('p');
-          img = createNode('img');
-          img.src = data.image_url_old
-          var absdiv = createNode('div')
-          absdiv.setAttribute('class', 'posabs')
-          let spandiv = createNode('span')
-          div.addEventListener('mouseenter', function () {
-            spandiv.innerHTML = data.noise_text
-            append(absdiv, spandiv)
-            append(div, absdiv)
+          let li = createNode('li');
+          li.innerHTML = data.type;
+          append(ul, li)
+          append(container, ul)
+
+          li.addEventListener('click', function () {
+            detailsdiv.innerHTML = ''
+            img = createNode('img');
+            p = createNode('p');
+            img.src = data.image_url_old
+            p.innerHTML = data.noise_text
+            append(detailsdiv, img)
+            append(detailsdiv, p)
           });
-          div.addEventListener('mouseleave', function () {
-            absdiv.remove()
-          });
-          p1.innerHTML = `${data.type}`;
-          // p2.innerHTML = `${data.email}`;
-          append(div, img)
-          append(div, p1);
-          // append(div, p2);
-          append(container, div);
         })
       })
   }
