@@ -3,7 +3,7 @@
 <p align="center"> 
   <a href="https://github.com/SandeepBalachandran/Pytract/releases/" target="_blank">
     <img alt="GitHub release" src="https://img.shields.io/github/v/release/SandeepBalachandran/Pytract?include_prereleases&style=flat-square">
-  </a>
+  </a> 
 
   <a href="https://github.com/SandeepBalachandran/Pytract/commits/master" target="_blank">
     <img src="https://img.shields.io/github/last-commit/SandeepBalachandran/Pytract?style=flat-square" alt="GitHub last commit">
