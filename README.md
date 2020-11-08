@@ -51,7 +51,7 @@
 
 # Introduction
 
-An application that extract meaningful data from any type of documents. [Currently support image formats].
+An application that extract meaningful data from any type of documents. [Currently support image formats .Other file supports in progress.].
 
 # Usage
 *For **end users**.*
@@ -59,8 +59,8 @@ An application that extract meaningful data from any type of documents. [Current
 Currently in progress to set up an environment
 
 ### Flow
- * Upload an image using the frontend.
- * Tesseract will extract the texts available in the image uploaded.
+ * Upload a file using the frontend.
+ * Tesseract will extract the texts available in the file uploaded.
 
 
 
@@ -69,27 +69,51 @@ Currently in progress to set up an environment
 *For **developers**.*
 ### Prerequisites
 
-The application needs a number of dependencies. Kindly ensure you have the following installed on your machine:
+The application has a number of dependencies. Kindly ensure you have the following installed on your machine:
 
-- [ ] Tesseract
 - [ ] Python
+- [ ] Python (Complete details provided below)
+- [ ] Mongo
+- [ ] Mongodb compass(optional , alternatives available)
+- [ ] Tesseract
 - [ ] Git
 
 
+- Python
+  - [Official download.](https://www.python.org/downloads/)
+  
 - Tesseract 
   - [Offcial documentation.](https://github.com/tesseract-ocr/tessdoc/blob/master/Documentation.md)
   - [Offcial download section.](https://github.com/tesseract-ocr/tessdoc/blob/master/Downloads.md)
   - [V5 alpha using in dev machine.](https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v5.0.0-alpha.20200328.exe)
 
-- Python
-  - [Official download.](https://www.python.org/downloads/)
-
+- Mongo
+   - [Official download.](https://www.mongodb.com/try/download/community)
+   
 - Git
   - [Official download.](https://git-scm.com/downloads)
   
   
   ### Running the Application
-  1.Clone the repository
+  
+  1. Install Python if it is not installed already. Add the environment variables and check version. 
+    ```cmd
+      C:\Users\username> python
+      Python 3.8.5 (tags/v3.8.5:580fbb0, Jul 20 2020, 15:43:08) [MSC v.1926 32 bit (Intel)] on win32
+      Type "help", "copyright", "credits" or "license" for more information.
+    ```
+   2 . Install Mongodb if it is not installed already.
+   3 . Install Mongodb compass. (client)
+   4 . Go to Mongo db location and run the server
+   ```cmd
+   C:\Program Files\MongoDB\Server\4.4\bin> mongod
+   ```
+   It will be available in port 27017
+   5. Go to compass enter the 
+ 
+ 
+ 
+ <!-- 1.Clone the repository
   
   ```cmd
   $ git clone https://github.com/SandeepBalachandran/Pytheract.git
@@ -113,7 +137,7 @@ The application needs a number of dependencies. Kindly ensure you have the follo
   
   ```cmd
   $ python app.py
-  ```
+  ``` -->
  
 # Contribute
 Please check the [**Contributing Guidelines**](https://github.com/SandeepBalachandran/Pytract/blob/master/CONTRIBUTING.md) before contributing.
