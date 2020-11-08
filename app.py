@@ -174,10 +174,7 @@ def upload():
             # res.status_code = 201
             # return res
             if file_extension == ".pdf":
-                file = pdf_to_img(file)
-                res = jsonify({"result":'yes', "message":"uploaded succesfully"})
-                res.status_code = 201
-                return res
+                pdffile = pdf_to_img(file)
             
             if file.filename == "":
                 return "File Must have a file name"
