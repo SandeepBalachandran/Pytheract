@@ -51,18 +51,19 @@
 
 # Introduction
 
-An application that extract meaningful data from any type of documents. [Currently support image formats .Other file supports in progress.].
+An application that extract meaningful data from any type of documents. [ Currently support image formats . Other format support will be added ]
 
 # Usage
 *For **end users**.*
 
 Currently in progress to set up an environment
 
+- - - -
 ### Flow
  * Upload a file using the frontend.
  * Tesseract will extract the texts available in the file uploaded.
 
-
+- - - -
 
 
 # Installation
@@ -72,13 +73,13 @@ Currently in progress to set up an environment
 The application has a number of dependencies. Kindly ensure you have the following installed on your machine:
 
 - [ ] Python
-- [ ] Python (Complete details provided below)
+- [ ] Python packages (Complete details provided below)
 - [ ] Mongo
 - [ ] Mongodb compass(optional , alternatives available)
 - [ ] Tesseract
 - [ ] Git
 
-
+- - - -
 - Python
   - [Official download.](https://www.python.org/downloads/)
   
@@ -90,13 +91,19 @@ The application has a number of dependencies. Kindly ensure you have the followi
 - Mongo
    - [Official download.](https://www.mongodb.com/try/download/community)
    
+- Compass
+  - [Official download.](https://docs.mongodb.com/compass/master/install)
+   
 - Git
   - [Official download.](https://git-scm.com/downloads)
+  
+  - - - -
   
   
   ### Running the Application
   
   1. Install Python if it is not installed already. Add the environment variables and check version. 
+  
     ```cmd
       C:\Users\username> python
       Python 3.8.5 (tags/v3.8.5:580fbb0, Jul 20 2020, 15:43:08) [MSC v.1926 32 bit (Intel)] on win32
@@ -105,6 +112,7 @@ The application has a number of dependencies. Kindly ensure you have the followi
   2. Install Mongodb if it is not installed already.
   3. Install Mongodb compass. ( Client )
   4. Go to Mongo db bin folder and run the server
+  
    ```cmd
    C:\Program Files\MongoDB\Server\4.4\bin> mongod
    ```
@@ -133,7 +141,7 @@ The application has a number of dependencies. Kindly ensure you have the followi
   pipenv install 
   ```
 
-  10 . Run Flask
+  10. Run Flask
 
   ```cmd
   set FLASK_APP=app.py
