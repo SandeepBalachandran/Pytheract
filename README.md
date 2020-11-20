@@ -1,19 +1,19 @@
 ![](./images/preview.png)
 <h1 align='center'>Pytheract</h1>
 <p align="center"> 
-  <a href="https://github.com/SandeepBalachandran/Pytract/releases/" target="_blank">
+  <a href="https://github.com/SandeepBalachandran/Pytheract/releases/" target="_blank">
     <img alt="GitHub release" src="https://img.shields.io/github/v/release/SandeepBalachandran/Pytract?include_prereleases&style=flat-square">
   </a> 
 
-  <a href="https://github.com/SandeepBalachandran/Pytract/commits/master" target="_blank">
+  <a href="https://github.com/SandeepBalachandran/Pytheract/commits/master" target="_blank">
     <img src="https://img.shields.io/github/last-commit/SandeepBalachandran/Pytract?style=flat-square" alt="GitHub last commit">
   </a>
 
-  <a href="https://github.com/SandeepBalachandran/Pytract/issues" target="_blank">
+  <a href="https://github.com/SandeepBalachandran/Pytheract/issues" target="_blank">
     <img src="https://img.shields.io/github/issues/SandeepBalachandran/Pytract?style=flat-square&color=red" alt="GitHub issues">
   </a>
 
-  <a href="https://github.com/SandeepBalachandran/Pytract/pulls" target="_blank">
+  <a href="https://github.com/SandeepBalachandran/Pytheract/pulls" target="_blank">
     <img src="https://img.shields.io/github/issues-pr/SandeepBalachandran/Pytract?style=flat-square&color=blue" alt="GitHub pull requests">
   </a>
 
@@ -24,17 +24,17 @@
   </a>
   
   <a href="" target="_blank">
-    <img alt="ESLint" src="https://img.shields.io/github/stars/SandeepBalachandran/Pytract">
+    <img alt="ESLint" src="https://img.shields.io/github/stars/SandeepBalachandran/Pytheract">
   </a>
   
   <a href="" target="_blank">
-    <img alt="ESLint" src="https://img.shields.io/github/forks/SandeepBalachandran/Pytract">
+    <img alt="ESLint" src="https://img.shields.io/github/forks/SandeepBalachandran/Pytheract">
   </a>
    <a href="" target="_blank">
-    <img alt="Codesize" src="https://img.shields.io/github/languages/code-size/SandeepBalachandran/Pytract.svg">
+    <img alt="Codesize" src="https://img.shields.io/github/languages/code-size/SandeepBalachandran/Pytheract.svg">
   </a>
   <a href="" target="_blank">
-    <img alt="Top Language" src="https://img.shields.io/github/languages/top/SandeepBalachandran/Pytract.svg">
+    <img alt="Top Language" src="https://img.shields.io/github/languages/top/SandeepBalachandran/Pytheract.svg">
   </a>
   
 </p>
@@ -47,11 +47,12 @@
 - [Introduction](#introduction)
 - [Usage](#usage)
 - [Installation](#installation)
+- [Features to include (Help needed)](#features)
 - [Contribute](#contribute)
 
 # Introduction
 
-An application that extract meaningful data from any type of documents. [ Currently support image formats . Other format support will be added ]
+An application that extract meaningful data from any type of files.
 
 # Usage
 *For **end users**.*
@@ -152,7 +153,14 @@ The application has a number of dependencies. Kindly ensure you have the followi
   It will be available in port 5000
   
   ### 
+# Features 
+- [ ] Extraction texts from pdf files.
+- [ ] Extraction texts from  zip files contains both images and pdf files.
+- [ ] Get webcam on UI.
+- [ ] Capture image/ extract texts from captured image.
+- [ ] Using regex locate specific contents . For eg: Email address, Phone number etc
+
  
 # Contribute
-Please check the [**Contributing Guidelines**](https://github.com/SandeepBalachandran/Pytract/blob/master/CONTRIBUTING.md) before contributing.
+Please check the [**Contributing Guidelines**](https://github.com/SandeepBalachandran/Pytheract/blob/master/CONTRIBUTING.md) before contributing.
 
