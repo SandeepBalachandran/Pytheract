@@ -20,6 +20,12 @@
   <a href="https://github.com/SandeepBalachandran/Pytheract/pulls" target="_blank">
     <img src="https://img.shields.io/github/issues-pr/SandeepBalachandran/Pytheract?style=flat-square&color=blue" alt="GitHub pull requests">
   </a>
+  
+  <a href="https://github.com/SandeepBalachandran/Pytheract" target="_blank">
+    <img src="https://img.shields.io/github/contributors/sandeepbalachandran/Pytheract?style=flat-square&color=blue" alt="GitHub contributors">
+  </a>
+  
+ 
 
   </br>
 
