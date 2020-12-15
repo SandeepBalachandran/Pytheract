@@ -2,19 +2,23 @@
 <h1 align='center'>Pytheract</h1>
 <p align="center"> 
   <a href="https://github.com/SandeepBalachandran/Pytheract/releases/" target="_blank">
-    <img alt="GitHub release" src="https://img.shields.io/github/v/release/SandeepBalachandran/Pytract?include_prereleases&style=flat-square">
+    <img alt="GitHub release" src="https://img.shields.io/github/v/release/SandeepBalachandran/Pytheract?include_prereleases&style=flat-square">
   </a> 
 
   <a href="https://github.com/SandeepBalachandran/Pytheract/commits/master" target="_blank">
-    <img src="https://img.shields.io/github/last-commit/SandeepBalachandran/Pytract?style=flat-square" alt="GitHub last commit">
+    <img src="https://img.shields.io/github/last-commit/SandeepBalachandran/Pytheract?style=flat-square" alt="GitHub last commit">
+  </a>
+  
+   <a href="https://github.com/SandeepBalachandran/Pytheract/commits/master" target="_blank">
+    <img src="https://img.shields.io/github/commit-activity/y/sandeepbalachandran/Pytheract?style=flat-square" alt="GitHub commit activity">
   </a>
 
   <a href="https://github.com/SandeepBalachandran/Pytheract/issues" target="_blank">
-    <img src="https://img.shields.io/github/issues/SandeepBalachandran/Pytract?style=flat-square&color=red" alt="GitHub issues">
+    <img src="https://img.shields.io/github/issues/SandeepBalachandran/Pytheract?style=flat-square&color=red" alt="GitHub issues">
   </a>
 
   <a href="https://github.com/SandeepBalachandran/Pytheract/pulls" target="_blank">
-    <img src="https://img.shields.io/github/issues-pr/SandeepBalachandran/Pytract?style=flat-square&color=blue" alt="GitHub pull requests">
+    <img src="https://img.shields.io/github/issues-pr/SandeepBalachandran/Pytheract?style=flat-square&color=blue" alt="GitHub pull requests">
   </a>
 
   </br>
